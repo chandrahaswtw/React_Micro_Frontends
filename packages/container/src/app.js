@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 import { mount as marketingMount } from "MarketingHost/showMarketing";
 
 const App = () => {
@@ -9,7 +9,7 @@ const App = () => {
   }, []);
 
   return <div ref={ref}></div>;
-  
+
 };
 
 export default App;
