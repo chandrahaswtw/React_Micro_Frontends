@@ -9,7 +9,7 @@ on:
       - master
       # We can keep as many branches as we wanted.
     paths:
-      -'packages/container/**'
+      - 'packages/container/**'
 
 # We are defining the defaults. This will set the execution environment inside the working-directory.
 defaults:
