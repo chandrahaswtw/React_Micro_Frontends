@@ -28,14 +28,19 @@ jobs:
     # Now we wish to deploy all the build files to Amazon S3, there we need something called AWS CLI...cont
     # It will automatically gives access to AWS
       - uses: chrislennon/action-aws-cli@v1.1
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
       - run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/container/latest
         env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     
-    # Explanation:  aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/container/latest
+    # Explanation:  aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/container/latest.
     # We are trying to react to "aws s3" cli from chris lennon, trying to sync the dist folder from "npm run build" to s3 bucket.
     # Bucket is essentially a place where we can store the files.
-    # Bucket name s3://${{ secrets.AWS_S3_BUCKET_NAME }}/container/latest
+    # Bucket name s3://${{ secrets.AWS_S3_BUCKET_NAME }}/container/latest.
+    # The code is being pushed to Bucket --> container --> latest folder.
+
 
 
