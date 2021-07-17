@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useCallback } from "react";
+import React, { useEffect, useRef } from "react";
 import { mount as marketingMount } from "MarketingHost/showMarketing";
 
 const App = () => {
