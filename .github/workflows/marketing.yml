@@ -11,6 +11,7 @@ on:
     paths:
       - 'packages/marketing/**'
 
+
 # We are defining the defaults. This will set the execution environment inside the working-directory.
 defaults:
   run:
@@ -24,6 +25,7 @@ jobs:
       - uses: actions/checkout@v2  #This action checks-out your repository under $GITHUB_WORKSPACE, so your workflow can access it.
       - run: npm install
       - run: npm run build
+
 
     # Now we wish to deploy all the build files to Amazon S3, there we need something called AWS CLI...cont
     # It will automatically gives access to AWS
