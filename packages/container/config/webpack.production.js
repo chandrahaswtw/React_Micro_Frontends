@@ -16,7 +16,7 @@ const prodConfig = {
             name : "container",
             remotes : {
                 MarketingHost: `marketingRemote@${domainName}/marketing/latest/MarketingRemoteEntry.js`,
-                AuthHost: "authREMOTE${domainName}/auth/latest/AuthRemoteEntry.js",
+                AuthHost: `authREMOTE@${domainName}/auth/latest/AuthRemoteEntry.js`,
             },
             shared: packageJSON.dependencies
         })
